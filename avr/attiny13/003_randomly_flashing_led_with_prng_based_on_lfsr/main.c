@@ -9,6 +9,7 @@
 
 #define	LED_PIN		PB0
 #define LFSR_SEED 	(91)
+#define	DELAY		(64)
 
 static uint16_t
 prng_lfsr16(void)
@@ -32,6 +33,6 @@ main(void)
                 } else {
                         PORTB &= ~(_BV(LED_PIN)); // LED off
 		}
-                _delay_ms(64);
+                _delay_ms(DELAY);
 	}
 }

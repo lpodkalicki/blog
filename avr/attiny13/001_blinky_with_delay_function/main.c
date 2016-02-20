@@ -14,7 +14,7 @@ main(void)
 {
 
 	/* setup */
-	DDRB = 0b00000001; // set LED pin as OUTPUT 
+	DDRB = 0b00000001; // set LED pin as OUTPUT
 	PORTB = 0b00000000; // set all pins to LOW
 
 	/* loop */
