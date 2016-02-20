@@ -49,9 +49,7 @@ main(void)
 	/* loop */
 	while (1) {
 		p = buff;
-		while((c = uart_getc()) != '\n' && (buff - p) < 16) {
-			*(p++) = c;
-		}
+		while((*(p++) = uart_getc()) != '\n' && (buff - p) < 16);
 		*p = 0;
 		_delay_ms(10);
 		uart_puts(buff);
