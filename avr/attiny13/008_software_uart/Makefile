@@ -1,5 +1,5 @@
 # --
-# Copyright (c) 2015, Lukasz Marcin Podkalicki <lukasz@podkalicki.com>
+# Copyright (c) 2016, Lukasz Marcin Podkalicki <lukasz@podkalicki.com>
 # --
 
 MCU=attiny13
