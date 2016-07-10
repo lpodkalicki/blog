@@ -20,16 +20,16 @@
 #define	LED_BLUE	PB2
 
 /* Rainbow settings */
-#define MAX 		(512)
-#define	STEP		(4)
+#define	MAX		(512)
+#define	STEP		(1)
 
 /* Fading states */
-#define REDtoYELLOW	(0)
-#define YELLOWtoGREEN 	(1)
-#define GREENtoCYAN 	(2)
-#define CYANtoBLUE 	(3)
-#define BLUEtoVIOLET 	(4)
-#define VIOLETtoRED 	(5)
+#define	REDtoYELLOW	(0)
+#define	YELLOWtoGREEN	(1)
+#define	GREENtoCYAN	(2)
+#define	CYANtoBLUE	(3)
+#define	BLUEtoVIOLET	(4)
+#define	VIOLETtoRED	(5)
 
 /* Global variables */
 uint16_t red = MAX;
@@ -64,8 +64,8 @@ main(void)
 	uint16_t i = 0;
 
 	/* --- setup --- */
-
-        DDRB = 0b00000111;
+	
+	DDRB = 0b00000111;
 	PORTB = 0b00000111;
 
 	/* --- loop --- */
@@ -98,8 +98,7 @@ main(void)
 		}
 
 		i++;
-
 	}
 
-        return (0);
+	return (0);
 }
