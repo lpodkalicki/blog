@@ -1,7 +1,7 @@
 /**
  * Copyright (c) 2016, Łukasz Marcin Podkalicki <lpodkalicki@gmail.com>
  * ATtiny13/011
- * Nonblocking infrared receiver (38kHz, TSOPxxx) and NEC protocol decoder.
+ * Control LEDs with IR remote control. Example of monblocking IR signal reader (38kHz, TSOPxxx) and NEC protocol decoder.
  */
 
 #include <avr/io.h>
