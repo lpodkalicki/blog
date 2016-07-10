@@ -2,6 +2,10 @@
  * Copyright (c) 2016, Łukasz Marcin Podkalicki <lpodkalicki@gmail.com>
  * ATtiny13/011
  * Control LEDs with IR remote control. Example of monblocking IR signal reader (38kHz, TSOPxxx) and NEC protocol decoder.
+ * Settings:
+ *  FUSE_L=0x7A
+ *  FUSE_H=0xFF
+ *  F_CPU=9600000
  */
 
 #include <avr/io.h>
