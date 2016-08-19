@@ -184,19 +184,23 @@ main(void)
 	TCCR0A |= (1<<WGM01); // set timer mode to Fast PWM
 	TCCR0A |= (1<<COM0A0); // connect PWM pin to Channel A of Timer0
 
+	/* Walk throwgh all octaves */
+	for (i = 0; i < 8; ++i) {
+		for (j = 0; j < 12; ++j) {
+			tone(i, j);
+			_delay_ms(80);
+		}
+	}
+
+	stop();
+	 _delay_ms(1500);
+
+
 	/* loop */
 	while (1) {
 
-		/* Walk throwgh all octaves
-		for (i = 0; i < 8; ++i) {
-			for (j = 0; j < 12; ++j) {
-				tone(i, j);
-				_delay_ms(700);
-			}
-		}
-		*/
 
-		/* Play song "Wlazł kotek na płotek" */
+		/* Polish song "Wlazł kotek na płotek" in loop */
 		tone(4, 7); // G
 		_delay_ms(500);
 		tone(4, 4); // E
