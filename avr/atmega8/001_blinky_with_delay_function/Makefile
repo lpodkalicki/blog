@@ -1,5 +1,5 @@
 # --
-# Copyright (c) 2016, Lukasz Marcin Podkalicki <lukasz@podkalicki.com>
+# Copyright (c) 2016, Lukasz Marcin Podkalicki <lpodkalicki@gmail.com>
 # --
 
 MCU=atmega8
