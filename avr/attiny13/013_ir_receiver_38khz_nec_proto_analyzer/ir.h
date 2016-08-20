@@ -10,7 +10,6 @@
 #define	_IR_H_
 
 #define	IR_IN_PIN		PB1
-#define	IR_IN_PORT		PORTB
 #define	IR_OCR0A		(122)
 
 #define	LOW			(0)
