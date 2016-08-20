@@ -38,7 +38,18 @@ typedef struct s_octave {
 	note_t note_B;
 } octave_t;
 
-/* All calculation below are prepared for ATtiny13 default clock source (1.2MHz) */
+/*
+
+ All calculations below are prepared for ATtiny13 default clock source (1.2MHz)
+
+ F = F_CPU / (2 * N * (1 + OCRnx)),
+
+ where:
+ - F is a calculated PWM frequency
+ - F_CPU is a clock source (1.2MHz)
+ - the N variable represents the prescale factor (1, 8, 64, 256, or 1024).
+
+*/
 
 PROGMEM const octave_t octaves[8] = {
 	{ // octave 0
@@ -179,10 +190,9 @@ main(void)
 	uint8_t i, j;
 
 	/* setup */
-	DDRB = 0b00000001; // set BUZZER pin as OUTPUT
-	PORTB = 0b00000000; // set all pins to LOW
-	TCCR0A |= (1<<WGM01); // set timer mode to Fast PWM
-	TCCR0A |= (1<<COM0A0); // connect PWM pin to Channel A of Timer0
+	DDRB |= _BV(BUZZER_PIN); // set BUZZER pin as OUTPUT
+	TCCR0A |= _BV(WGM01); // set timer mode to Fast PWM
+	TCCR0A |= _BV(COM0A0); // connect PWM pin to Channel A of Timer0
 
 	/* Walk throwgh all octaves */
 	for (i = 0; i < 8; ++i) {
