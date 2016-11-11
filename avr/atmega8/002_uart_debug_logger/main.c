@@ -2,8 +2,8 @@
  * Copyright (c) 2016, Łukasz Marcin Podkalicki <lpodkalicki@gmail.com>
  * ATmega8/002
  * Simple debug logging via UART.
- * --
- * Wiring:
+ *
+ * Simplified wiring diagram:
  * +------------+----------------+
  * |   ATMEGA8  | Serial Adapter |
  * +------------+----------------+
@@ -11,6 +11,7 @@
  * +------------+----------------+
  * |     GND    |      GND       |
  * +------------+----------------+
+ *
  */
 
 #include <avr/io.h>
@@ -68,5 +69,6 @@ UART_putc(char c)
 void
 UART_puts(const char *s)
 {
+
      	while (*s) UART_putc(*(s++));
 }
