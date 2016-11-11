@@ -39,7 +39,6 @@ typedef struct s_octave {
 } octave_t;
 
 /*
-
  All calculations below are prepared for ATtiny13 default clock source (1.2MHz)
 
  F = F_CPU / (2 * N * (1 + OCRnx)),
@@ -48,7 +47,6 @@ typedef struct s_octave {
  - F is a calculated PWM frequency
  - F_CPU is a clock source (1.2MHz)
  - the N variable represents the prescale factor (1, 8, 64, 256, or 1024).
-
 */
 
 PROGMEM const octave_t octaves[8] = {
@@ -173,7 +171,7 @@ tone(uint8_t octave, uint8_t note)
 	note_t *val;
 	ret = pgm_read_word_near((uint8_t *)&octaves + sizeof(octave_t) * octave + sizeof(note_t) * note);
 	val = (note_t *)&ret;
-	TCCR0B = (TCCR0B & ~((1<<CS02)|(1<<CS01)|(1<<CS00))) | val->N;
+	TCCR0B = (TCCR0B & ~((1<<CS02)|(1<<CS01)|(1<<CS00))) | val->N; // set prescaler
   	OCR0A = val->OCRxn - 1; // set the OCRnx
 }
 
@@ -203,13 +201,11 @@ main(void)
 	}
 
 	stop();
-	 _delay_ms(1500);
+	_delay_ms(1500);
 
 
 	/* loop */
 	while (1) {
-
-
 		/* Polish song "Wlazł kotek na płotek" in loop */
 		tone(4, 7); // G
 		_delay_ms(500);
@@ -254,7 +250,6 @@ main(void)
 
 		stop();
 		_delay_ms(5000);
-
 	}
 
 }
