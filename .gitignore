@@ -1,1 +1,7 @@
+*.c~
+*.zip
 *.kdev4
+*.bin
+*.elf
+*.o
+*.hex
