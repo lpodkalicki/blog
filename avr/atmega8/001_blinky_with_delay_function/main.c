@@ -2,6 +2,16 @@
  * Copyright (c) 2016, Łukasz Marcin Podkalicki <lpodkalicki@gmail.com>
  * ATmega8/001
  * Simple blinky with delay function.
+ *
+ * Simplified wiring diagram:
+ * +------------+----------+
+ * |    MCU     |    LED   |
+ * +------------+----------+
+ * |  PB0 (14)  |  anode   |
+ * +------------+----------+
+ * |  GND       |  cathode |
+ * +------------+----------+
+ *
  */
 
 #include <avr/io.h>
