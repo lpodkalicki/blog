@@ -189,7 +189,7 @@ main(void)
 
 	/* setup */
 	DDRB |= _BV(BUZZER_PIN); // set BUZZER pin as OUTPUT
-	TCCR0A |= _BV(WGM01); // set timer mode to Fast PWM
+	TCCR0A |= _BV(WGM01); // set timer mode to CTC
 	TCCR0A |= _BV(COM0A0); // connect PWM pin to Channel A of Timer0
 
 	/* Walk throwgh all octaves */
