@@ -64,7 +64,7 @@ main(void)
 
 	/* setup */
 	DDRB |= _BV(LED_BLUE)|_BV(LED_GREEN)|_BV(LED_RED); // set LED pins as OUTPUT
-	ADCSRA |= _BV(ADPS2)|_BV(ADPS1); // set ADC division factor 128;
+	ADCSRA |= _BV(ADPS2)|_BV(ADPS1); // set ADC division factor 64;
 	ADCSRA |= _BV(ADEN)|_BV(ADIE); // ADC interrupt enable
 	ADMUX = _BV(MUX1); // set PB4 as audio input
 	sei(); // enable global interrupts
