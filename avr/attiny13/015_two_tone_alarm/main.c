@@ -49,6 +49,7 @@ twotone_alarm(uint8_t type)
 {
 
 	switch(type) {
+	/* Plase here your own two-tone alaram composition! */
 	case 1:
 		tone_loop(123, N_8, 6, 10, 10);
 		tone_loop(22, N_8, 6, 10, 0);
