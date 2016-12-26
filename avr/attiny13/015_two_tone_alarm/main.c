@@ -23,7 +23,7 @@
 #define	N_1024	(_BV(CS02)|_BV(CS00))
 
 static void twotone_alarm(uint8_t type);
-static void tone_loop(uint8_t value, uint8_t N, uint8_t max, uint8_t delay, uint8_t pause);
+static void tone_loop(uint8_t OCRxn, uint8_t N, uint8_t max, uint8_t delay, uint8_t pause, uint8_t fade);
 static void timer_set(uint8_t OCRxn, uint8_t N);
 static void sleep(uint8_t ms);
 
@@ -51,25 +51,42 @@ twotone_alarm(uint8_t type)
 	switch(type) {
 	/* Plase here your own two-tone alaram composition! */
 	case 1:
-		tone_loop(123, N_8, 6, 10, 10);
-		tone_loop(22, N_8, 6, 10, 0);
+		tone_loop(123, N_8, 6, 10, 10, 1);
+		tone_loop(22, N_8, 6, 10, 0, -1);
 		break;
 	default:
 	case 0:
-		tone_loop(32, N_8, 6, 10, 10);
-		tone_loop(22, N_8, 6, 10, 0);
+		tone_loop(32, N_8, 6, 10, 10, 1);
+		tone_loop(22, N_8, 6, 10, 0, -1);
 		break;
 	}
 }
 
 
+/**
+ * Single tone loop with fade-in/out effect.
+ *
+ * Base square wave frequency,
+ * F = F_CPU / (2 * N * (1 + OCRnx)), where:
+ * - F is a calculated PWM frequency
+ * - F_CPU is a clock source (1.2MHz)
+ * - the N variable represents the prescaler factor (1, 8, 64, 256, or 1024)
+ *
+ * @param OCRxn: timer OCRxn value
+ * @param N: timer prescaler (N_1, N_8, N_64, N_256, N_1024)
+ * @param max: number of iterations (incr/decr of OCRxn)
+ * @param delay: little delay after each iteration in miliseconds
+ * @param pause: delay after a tone loop, delay between tones
+ * @param fade: fade-in (1) or fade-out (-1) factor
+ */
 void
-tone_loop(uint8_t value, uint8_t N, uint8_t max, uint8_t delay, uint8_t pause)
+tone_loop(uint8_t OCRxn, uint8_t N, uint8_t max, uint8_t delay, uint8_t pause, uint8_t fade)
 {
 	uint8_t i;
 
 	for (i = 0; i < max; ++i) {
-		timer_set(value--, N);
+		timer_set(OCRxn, N);
+		OCRxn += fade;
 		sleep(delay);
 	}
 
