@@ -12,7 +12,7 @@ static uint16_t
 lfsr16_next(uint16_t n)
 {
 
-	return (n >> 0x01) ^ (-(n & 0x01) & 0xB400);
+	return (n >> 0x01U) ^ (-(n & 0x01U) & 0xB400U);
 }
 
 
