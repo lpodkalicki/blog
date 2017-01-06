@@ -53,7 +53,6 @@ rainbow(int n)
 
 	if (red >= MAX || green >= MAX || blue >= MAX || red <= 0 || green <= 0 || blue <= 0) {
 		state = (state + 1) % 6; // Finished fading a color so move on to the next
-	
 	}
 }
 
@@ -64,12 +63,10 @@ main(void)
 	uint16_t i = 0;
 
 	/* --- setup --- */
-	
 	DDRB = 0b00000111;
 	PORTB = 0b00000111;
 
 	/* --- loop --- */
-
         while (1) {
 
 		/* Rainbow algorithm */
