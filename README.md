@@ -8,4 +8,4 @@ If you like my code sharing, then please star this repository.
 
 ## Any Question? Need Help?
 
-For comments specific to a blog post, feel free to leave a comment below the post. Otherwise, feel free to send me an mail at lpodkalicki@gmail.com.
+Please send me an mail at lpodkalicki@gmail.com.
