@@ -25,7 +25,7 @@ VFG_init(void)
         VFG_DDR |= _BV(VFG_PIN); // set DDS pin as OUTPUT
  	TCCR1B |= _BV(WGM12); // set timer CTC mode
 	TIMSK |= _BV(OCIE1A);
-	VFG_set(VFG_DEFAULT_FREQENCY);	
+	VFG_set(VFG_DEFAULT_FREQENCY);
 	sei();
 }
 
@@ -47,19 +47,17 @@ VFG_set(uint32_t freq)
 		case 4: p_N = N_1024; p_V = 10; break;
 		default: break;
 		}
-	
+
 		tmp = (double)((uint32_t)F_CPU >> (uint32_t)(p_V + 1));
                 OCRnx_calc = round((tmp / (double)freq) - 1.);
-		
+
                 if (OCRnx_calc >= 0. && OCRnx_calc < VFG_TIMER_MAX) {
-		
 		        freq_calc = round(tmp / (OCRnx_calc + 1.));
 	                if ((double)freq > freq_calc) {
                                 tmp = (1. - (freq_calc / (double)freq)) * 100.;
                         } else {
                                 tmp = (1. - ((double)freq / freq_calc)) * 100.;
                         }
-			
                         if (tmp < err) {
                                 err = tmp;
                                 ret_OCRnx = (uint16_t)OCRnx_calc;
@@ -86,4 +84,3 @@ ISR(TIMER1_COMPA_vect)
 
 	VFG_PORT ^= _BV(VFG_PIN);
 }
-
