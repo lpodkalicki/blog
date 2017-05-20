@@ -1,5 +1,5 @@
 /**
- * Copyright (c) 2016, Łukasz Marcin Podkalicki <lpodkalicki@gmail.com>
+ * Copyright (c) 2017, Łukasz Marcin Podkalicki <lpodkalicki@gmail.com>
  * ATtiny13/029
  * Read temperature (0°C to 100°C) using analog sensor LM35
  * and log the data to Software UART (baudrate 19200, 8N1) once per second.
