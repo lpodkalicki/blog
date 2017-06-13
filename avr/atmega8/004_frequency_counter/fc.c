@@ -45,11 +45,10 @@ ISR(TIMER2_COMP_vect)
 {
 	uint8_t sreg;
 
-	// 500Hz / 50 => 10Hz (0.1s). 
+	// 500Hz / 50 => 10Hz (0.1s)
 	if (++timer_cnt < 50)
 		return;
 
-	
 	sreg = SREG;
 	cli();
 	fc_sum += fc_cnt;
