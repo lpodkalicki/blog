@@ -17,6 +17,8 @@
 #define	WIFI_CHANNEL_MAX		(13)
 #define	WIFI_CHANNEL_SWITCH_INTERVAL	(500)
 
+static wifi_country_t wifi_country = {.cc="CN", .schan=1, .nchan=13, .policy=WIFI_COUNTRY_POLICY_AUTO};
+
 typedef struct {
 	unsigned frame_ctrl:16;
 	unsigned duration_id:16;
@@ -72,8 +74,7 @@ wifi_sniffer_init(void)
     	ESP_ERROR_CHECK( esp_event_loop_init(event_handler, NULL) );
     	wifi_init_config_t cfg = WIFI_INIT_CONFIG_DEFAULT();
 	ESP_ERROR_CHECK( esp_wifi_init(&cfg) );
-	/* set country EU for channel range [1, 13] */
-	ESP_ERROR_CHECK( esp_wifi_set_country(WIFI_COUNTRY_EU) );
+	ESP_ERROR_CHECK( esp_wifi_set_country(&wifi_country) ); /* set country for channel range [1, 13] */
 	ESP_ERROR_CHECK( esp_wifi_set_storage(WIFI_STORAGE_RAM) );
     	ESP_ERROR_CHECK( esp_wifi_set_mode(WIFI_MODE_NULL) );
     	ESP_ERROR_CHECK( esp_wifi_start() );
@@ -92,7 +93,6 @@ const char *
 wifi_sniffer_packet_type2str(wifi_promiscuous_pkt_type_t type)
 {
 	switch(type) {
-	case WIFI_PKT_CTRL: return "CTRL";
 	case WIFI_PKT_MGMT: return "MGMT";
 	case WIFI_PKT_DATA: return "DATA";
 	default:	
