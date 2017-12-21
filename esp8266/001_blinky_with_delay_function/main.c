@@ -31,5 +31,6 @@ user_init(void)
 {
 
 	uart_set_baud(0, 115200);
+	printf("SDK version:%s\n", sdk_system_get_sdk_version());
 	xTaskCreate(blinky_task, "blinky_task", 256, NULL, 2, NULL);
 }
