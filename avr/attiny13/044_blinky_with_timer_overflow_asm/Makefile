@@ -9,7 +9,7 @@ F_CPU=1200000
 AS=avra
 AVRDUDE=avrdude
 TARGET=main
-ASFLAGS=-I ../
+ASFLAGS=-I ../../asm/include
 
 SRCS = main.asm
 
