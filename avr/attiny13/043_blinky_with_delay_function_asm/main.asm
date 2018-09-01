@@ -1,14 +1,20 @@
 ; Copyright (c) 2018, Łukasz Marcin Podkalicki <lpodkalicki@gmail.com>
 ; ATtiny13/043
-; Simple blinky with delay function (assembler version, 30 bytes of program flash).
+; Simple blinky with delay function (assembler version, 32 bytes of program flash).
 
+.nolist
 .include "tn13def.inc"
+.list
 
+; define constant
 .equ LED_PIN = PB0			; use PB0 as LED pin
 
-.org 0x00				; set SRAM address to 0x00
+; start vector
+.org 0x0000
+	rjmp	main			; jump to main label
 
-setup:
+; main program
+main:
 	sbi	DDRB, LED_PIN		; set LED pin as output
 loop:
 	sbic	PINB, LED_PIN		; if bit of LED pin is clear, skip next line

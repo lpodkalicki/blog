@@ -9,11 +9,12 @@ F_CPU=1200000
 AS=avra
 AVRDUDE=avrdude
 TARGET=main
+ASFLAGS=-I ../
 
 SRCS = main.asm
 
 all:
-	${AS} -o ${TARGET} ${SRCS}
+	${AS} ${ASFLAGS} -o ${TARGET} ${SRCS}
 
 flash:
 	${AVRDUDE} -p ${MCU} -c usbasp -U flash:w:${TARGET}.hex:i -F -P usb
