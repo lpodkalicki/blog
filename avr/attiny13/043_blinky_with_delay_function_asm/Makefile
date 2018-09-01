@@ -13,7 +13,7 @@ TARGET=main
 SRCS = main.asm
 
 all:
-	${AS} -o ${TARGET}.o ${SRCS}
+	${AS} -o ${TARGET} ${SRCS}
 
 flash:
 	${AVRDUDE} -p ${MCU} -c usbasp -U flash:w:${TARGET}.hex:i -F -P usb
@@ -22,4 +22,4 @@ fuse:
 	$(AVRDUDE) -p ${MCU} -c usbasp -U hfuse:w:${FUSE_H}:m -U lfuse:w:${FUSE_L}:m
 
 clean:
-	rm -f *.c~ *.o *.elf *.hex *.obj *.cof
+	rm -f *.asm~ *.hex *.obj *.cof

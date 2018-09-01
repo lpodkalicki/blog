@@ -410,34 +410,34 @@
 .equ	SPIEN	= 7	; SPI programming enable
 
 ; HIGH fuse bits
-.equ	RSTDISBL	= 0	; Disable external reset
-.equ	BODLEVEL0	= 1	; Enable BOD and select level
-.equ	BODLEVEL1	= 2	; Enable BOD and select level
-.equ	DWEN	= 3	; DebugWire Enable
-.equ	SELFPRGEN	= 4	; Self Programming Enable
+.equ	RSTDISBL = 0	; Disable external reset
+.equ	BODLEVEL0 = 1	; Enable BOD and select level
+.equ	BODLEVEL1 = 2	; Enable BOD and select level
+.equ	DWEN = 3	; DebugWire Enable
+.equ	SELFPRGEN = 4	; Self Programming Enable
 
 
 
 ; ***** CPU REGISTER DEFINITIONS *****************************************
-.def	XH	= r27
-.def	XL	= r26
-.def	YH	= r29
-.def	YL	= r28
-.def	ZH	= r31
-.def	ZL	= r30
+.def	XH = r27
+.def	XL = r26
+.def	YH = r29
+.def	YL = r28
+.def	ZH = r31
+.def	ZL = r30
 
 
 
 ; ***** DATA MEMORY DECLARATIONS *****************************************
-.equ	FLASHEND	= 0x01ff	; Note: Word address
-.equ	IOEND	= 0x003f
-.equ	SRAM_START	= 0x0060
-.equ	SRAM_SIZE	= 64
-.equ	RAMEND	= 0x009f
+.equ	FLASHEND = 0x01ff	; Note: Word address
+.equ	IOEND = 0x003f
+.equ	SRAM_START = 0x0060
+.equ	SRAM_SIZE = 64
+.equ	RAMEND = 0x009f
 .equ	XRAMEND	= 0x0000
-.equ	E2END	= 0x003f
-.equ	EEPROMEND	= 0x003f
-.equ	EEADRBITS	= 6
+.equ	E2END = 0x003f
+.equ	EEPROMEND = 0x003f
+.equ	EEADRBITS = 6
 ; #pragma AVRPART MEMORY PROG_FLASH 1024
 ; #pragma AVRPART MEMORY EEPROM 64
 ; #pragma AVRPART MEMORY INT_SRAM SIZE 64
@@ -446,22 +446,22 @@
 
 
 ; ***** BOOTLOADER DECLARATIONS ******************************************
-.equ	PAGESIZE	= 16
+.equ	PAGESIZE = 16
 
 
 
 ; ***** INTERRUPT VECTORS ************************************************
-.equ	INT0addr	= 0x0001	; External Interrupt 0
-.equ	PCI0addr	= 0x0002	; External Interrupt Request 0
-.equ	OVF0addr	= 0x0003	; Timer/Counter0 Overflow
-.equ	ERDYaddr	= 0x0004	; EEPROM Ready
+.equ	INT0addr = 0x0001	; External Interrupt 0
+.equ	PCI0addr = 0x0002	; External Interrupt Request 0
+.equ	OVF0addr = 0x0003	; Timer/Counter0 Overflow
+.equ	ERDYaddr = 0x0004	; EEPROM Ready
 .equ	ACIaddr	= 0x0005	; Analog Comparator
-.equ	OC0Aaddr	= 0x0006	; Timer/Counter Compare Match A
-.equ	OC0Baddr	= 0x0007	; Timer/Counter Compare Match B
+.equ	OC0Aaddr = 0x0006	; Timer/Counter Compare Match A
+.equ	OC0Baddr = 0x0007	; Timer/Counter Compare Match B
 .equ	WDTaddr	= 0x0008	; Watchdog Time-out
-.equ	ADCCaddr	= 0x0009	; ADC Conversion Complete
+.equ	ADCCaddr = 0x0009	; ADC Conversion Complete
 
-.equ	INT_VECTORS_SIZE	= 10	; size in words
+.equ	INT_VECTORS_SIZE = 10	; size in words
 
 #endif  /* _TN13DEF_INC_ */
 
