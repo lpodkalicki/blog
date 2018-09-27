@@ -28,20 +28,20 @@
 #include <util/delay.h>
 #include <avr/interrupt.h>
 
-#define	R1			(120U) // 120kOhm
-#define	R2			(10U) // 10kOhm
-#define	VREF			(1100U) // internal voltage reference 1.1V == 1100mV
-#define	COEFFICIENT		(130U) // coefficient = (VREF / ((R2 * 100U / (R1 + R2))) = 143
+#define R1			(120U) // 120kOhm
+#define R2			(10U) // 10kOhm
+#define VREF			(1100U) // internal voltage reference 1.1V == 1100mV
+#define COEFFICIENT		(130U) // coefficient = (VREF / ((R2 * 100U / (R1 + R2))) = 143
 
-#define	SAMPLES_NUM		(32)
+#define SAMPLES_NUM		(32)
 
-#define	LED_GRN_PIN		PB0
-#define	LED_YEL_PIN		PB1
-#define	LED_RED_PIN		PB2
+#define LED_GRN_PIN		PB0
+#define LED_YEL_PIN		PB1
+#define LED_RED_PIN		PB2
 
-#define	BAT_GOOD_THRESHOLD	(12000U) // green LED lighting, <80, 100%> => <12000mV, 14000mV>
-#define	BAT_LOW_THRESHOLD	(9000U) // yellow LED lighting, <60, 80%) => <9000mV, 12000mV)
-#define	BAT_CRITICAL_THRESHOLD	(0) // red LED lighting, <0, 60%) => <0, 9000mV)
+#define BAT_GOOD_THRESHOLD	(12000U) // green LED lighting, <80, 100%> => <12000mV, 14000mV>
+#define BAT_LOW_THRESHOLD	(9000U) // yellow LED lighting, <60, 80%) => <9000mV, 12000mV)
+#define BAT_CRITICAL_THRESHOLD	(0) // red LED lighting, <0, 60%) => <0, 9000mV)
 
 static void process(void);
 
@@ -72,7 +72,7 @@ main(void)
 	ADMUX = _BV(MUX1)|_BV(REFS0); // set PB4 as analog input and use internal voltage reference
 	sei(); // enable global interrupts
 
-	ADCSRA |= _BV(ADSC); // start first round of signal acquisitions
+	ADCSRA |= _BV(ADSC); // start first round of signal acquisition
 
 	/* loop */
 	while (1) {
@@ -105,5 +105,5 @@ process(void)
 		PORTB |= _BV(LED_RED_PIN);
 	}
 
-	ADCSRA |= _BV(ADSC); // trigger next round of signal acquisitions
+	ADCSRA |= _BV(ADSC); // trigger next round of signal acquisition
 }
