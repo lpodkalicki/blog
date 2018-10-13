@@ -1,7 +1,7 @@
 /**
  * Copyright (c) 2018, Lukasz Marcin Podkalicki <lpodkalicki@gmail.com>
- * STM32F042/001
- * Blinky with delay function.
+ * STM32F042/004
+ * UART Debug Logger.
  */
 
 #include <string.h>

@@ -1,6 +1,6 @@
 /**
  * Copyright (c) 2018, Lukasz Marcin Podkalicki <lpodkalicki@gmail.com>
- * STM32F042/001
+ * STM32F042/002
  * FreeRTOS version of blinky with delay function.
  */
 
