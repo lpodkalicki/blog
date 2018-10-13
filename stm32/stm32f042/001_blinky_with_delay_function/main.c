@@ -9,7 +9,7 @@
 #define LED_GPIO_PIN		GPIO_PIN_1
 #define LED_GPIO_PORT		GPIOB
 #define LED_GPIO_CLK_ENABLE()	__HAL_RCC_GPIOB_CLK_ENABLE()
-#define LED_DELAY		(50)
+#define LED_DELAY		(200)
 
 extern void error_handler(void);
 static void SystemClock_Config(void);
