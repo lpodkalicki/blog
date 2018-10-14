@@ -73,7 +73,6 @@ RCC_Config(void)
 void
 GPIO_Config(void)
 {
-
 	GPIO_InitTypeDef GPIO_InitStruct;
 
 	/* -- Configure the GPIO of LED pins -- */

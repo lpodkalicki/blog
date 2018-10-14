@@ -19,7 +19,7 @@
 #define LOGGER_UART_RX_PIN			GPIO_PIN_3
 #define LOGGER_UART_RX_GPIO_PORT		GPIOA
 #define LOGGER_UART_RX_AF			GPIO_AF1_USART2
-#define	LOGGER_BAUDRATE				(115200)
+#define LOGGER_BAUDRATE				(115200)
 
 extern void error_handler(void);
 static void SystemClock_Config(void);
@@ -96,7 +96,6 @@ RCC_Config(void)
 void
 GPIO_Config(void)
 {
-
 	GPIO_InitTypeDef GPIO_InitStruct;
 
 	/* -- Configure the GPIO pins for Logger UART -- */

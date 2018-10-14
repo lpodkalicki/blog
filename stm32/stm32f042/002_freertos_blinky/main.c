@@ -46,7 +46,6 @@ blinky_task(void *prv)
                 HAL_GPIO_TogglePin(LED_GPIO_PORT, LED_GPIO_PIN);
                 vTaskDelay(LED_DELAY);
         }
-
 }
 
 void
@@ -87,7 +86,6 @@ RCC_Config(void)
 void
 GPIO_Config(void)
 {
-
 	GPIO_InitTypeDef GPIO_InitStruct;
 
 	/* -- Configure the GPIO of LED pins -- */
