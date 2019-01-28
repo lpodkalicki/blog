@@ -29,4 +29,4 @@ fuse:
 	$(AVRDUDE) -p ${MCU} -c usbasp -U hfuse:w:${FUSE_H}:m -U lfuse:w:${FUSE_L}:m
 
 clean:
-	rm -f *.c~ *.o *.elf *.hex
+	rm -f *.c~ *.h~ *.o *.elf *.hex
