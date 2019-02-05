@@ -1,7 +1,7 @@
 /**
  * Copyright (c) 2019, Łukasz Marcin Podkalicki <lpodkalicki@gmail.com>
- * ArduinoUno/001
- * Blinky with timer1 OVF.
+ * ArduinoUno/002
+ * Blinky with Timer1 OVF.
  */
 
 #define LED_PIN     (13)
