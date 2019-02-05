@@ -13,6 +13,7 @@ void setup() {
   TCCR1B = _BV(CS12)|_BV(CS10); // set Timer1 prescaler to 1024
   TIMSK1 |= _BV(TOIE1); // enable Timer1 overflow interrupt
   TCNT1 = TIMER_TCNT; // reload timer counter
+  interrupts(); // enable global interrupts
 }
 
 void loop() {
