@@ -1,3 +1,6 @@
 # ATtiny13
 
-Complete projects and code examples based on tiny AVR chip - ATtiny13. All project details can be found here - http://blog.podkalicki.com/tag/attiny13/
+You can find here complete projects and code examples for ATtiny13. 
+
+Check my website for project descriptions - https://blog.podkalicki.com/100-projects-on-attiny13/
+

@@ -5,7 +5,6 @@
  */
 
 #include <avr/io.h>
-#include <util/delay.h>
 #include <avr/interrupt.h>
 
 #define LED_LOW              PB0
@@ -19,7 +18,7 @@
 #define N                    (7) // N-points (FFT)
 #define B                    (3 * N / 4) // b-value (FFT)
 
-const int8_t W[N] = {10, 6, -2, -9, -9, -2, 6}; //{10, 4, -5, -9, -4, 5}; // twiddle factors (FFT)
+const int8_t W[N] = {10, 6, -2, -9, -9, -2, 6}; // twiddle factors (FFT)
 int8_t samples[N]; // raw samples (ADC)
 uint16_t power[N>>1]; // power spectrum (FFT)
 volatile uint8_t counter = 0;
