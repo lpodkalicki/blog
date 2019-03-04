@@ -11,9 +11,9 @@
 #define LED_MID              PB1
 #define LED_HIGH             PB2
 
-#define LOW_THRESHOLD        (64000UL)
-#define MID_THRESHOLD        (32)
-#define HIGH_THRESHOLD       (16)
+#define LOW_THRESHOLD        (48000UL)
+#define MID_THRESHOLD        (128)
+#define HIGH_THRESHOLD       (64)
 
 #define N                    (7) // N-points (FFT)
 #define B                    (3 * N / 4) // b-value (FFT)
@@ -104,6 +104,6 @@ fft(void)
                         a += i;
 			b += i;
                 }
-		power[i] = (re[i] * re[i] + im[i] * im[i]) >> 6;
+		power[i] = (re[i] * re[i] + im[i] * im[i]) >> 4;
         }
 }
