@@ -1,6 +1,6 @@
 /**
  * Copyright (c) 2019, Łukasz Marcin Podkalicki <lpodkalicki@gmail.com>
- * ArduinoUno/002
+ * Arduino/002
  * Blinky with Timer1 OVF.
  */
 

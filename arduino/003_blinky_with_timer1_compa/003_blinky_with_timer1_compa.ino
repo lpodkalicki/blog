@@ -1,6 +1,6 @@
 /**
  * Copyright (c) 2019, Łukasz Marcin Podkalicki <lpodkalicki@gmail.com>
- * ArduinoUno/003
+ * Arduino/003
  * Blinky with Timer1 COMPA.
  */
 

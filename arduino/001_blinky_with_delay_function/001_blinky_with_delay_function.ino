@@ -1,6 +1,6 @@
 /**
  * Copyright (c) 2019, Łukasz Marcin Podkalicki <lpodkalicki@gmail.com>
- * ArduinoUno/001
+ * Arduino/001
  * Blinky with delay function.
  */
 

@@ -1,7 +1,7 @@
 
 /**
  * Copyright (c) 2019, Łukasz Marcin Podkalicki <lpodkalicki@gmail.com>
- * ArduinoUno/004
+ * Arduino/004
  * Example of stepper motor (28BYJ-48) controller. 
  */
  

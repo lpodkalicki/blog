@@ -1,7 +1,7 @@
 /**
  * Copyright (c) 2020, Łukasz Marcin Podkalicki <lpodkalicki@gmail.com>
  * Arduino/005
- * Blinking LED with SimpleLED class.
+ * Blinking LED with BasicLED class.
  */
 
 #include <stdint.h>
@@ -9,11 +9,11 @@
 /**
  * The instance of this class can control single LED.
  * - on, off, toggle (any digital pin)
- * - brightness (only PWM pins: 3, 5, 6, 9, 10, 11)
+ * - brightness (only PWM pins; i.e. for Arduino Uno: 3, 5, 6, 9, 10, 11)
  */
-class SimpleLed {
+class BasicLed {
 public:
-  SimpleLed(uint8_t pin): pin_(pin) {
+  BasicLed(uint8_t pin): pin_(pin) {
     pinMode(pin, OUTPUT); 
   }
   void on(void) {
@@ -30,9 +30,9 @@ public:
   }
 private:
   uint8_t pin_;
-}; /* End of class SimpleLed */
+}; /* End of class BasicLed */
 
-SimpleLed led(13);
+BasicLed led(13);
 
 void setup() {
   // do nothing
