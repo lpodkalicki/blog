@@ -45,7 +45,7 @@
 
 static void process(void);
 
-uint16_t samples_sum = 0;
+volatile uint16_t samples_sum = 0;
 volatile uint8_t samples_cnt = 0;
 
 ISR(ADC_vect)
