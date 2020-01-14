@@ -1,7 +1,7 @@
 /**
  * Copyright (c) 2020, Łukasz Marcin Podkalicki <lpodkalicki@gmail.com>
  * Arduino/006
- * Blinking LED with BasicLED class.
+ * Control LED brightness (LED connected with resistor in series to pin 11)
  */
 
 #include <stdint.h>
@@ -16,27 +16,19 @@ public:
   BasicLed(uint8_t pin): pin_(pin) {
     pinMode(pin, OUTPUT); 
   }
-  /**
-   * Light the LED up
-   */
+  /* Light the LED up */
   void on(void) {
     digitalWrite(pin_, HIGH);
   }
-  /**
-   * Turn the LED off
-   */
+  /* Turn the LED off */
   void off(void) {
     digitalWrite(pin_, LOW);
   }
-  /**
-   * Toogle LED on/off
-   */
+  /* Toogle LED on/off */
   void toggle(void) {
     digitalWrite(pin_, !digitalRead(pin_));
   }
-  /**
-   * Set LED brightness from range <0, 255>
-   */
+  /* Set LED brightness from range <0, 255> */
   void setBrightness(uint8_t value) {
     analogWrite(pin_, value);
   }
