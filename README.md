@@ -4,7 +4,8 @@ Hi, thank you for visiting my repository. You can find here a lot of code snippe
 
 ## Credits
 
-If you like my code sharing, then please star this repository. For those who did, thank you! :)
+If you like my code sharing, then please star this repository. You can also become a [sponsor](https://github.com/sponsors/lpodkalicki) of my opensource work. 
+Thank you! :)
 
 ## Any Question? Need Help?
 
